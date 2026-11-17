@@ -8,7 +8,7 @@
     --vermelho: #d32f2f;
     --vermelho-escuro: #b71c1c;
     --amarelo: #ffc107;
-    --escuro: #1a1a1a;
+    --escuro: #16151a;
     --cinza: #f5f5f5;
     --texto: #333;
     --sucesso: #2e7d32;
@@ -23,6 +23,7 @@ body {
     color: var(--texto);
     line-height: 1.6;
     background: #fff;
+    padding-bottom: 72px;
 }
 
 .container {
@@ -31,11 +32,36 @@ body {
     padding: 0 20px;
 }
 
+section {
+    padding: 56px 0;
+}
+
+.kicker {
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--vermelho);
+    margin-bottom: 10px;
+}
+
+.titulo-secao {
+    font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--escuro);
+    margin-bottom: 28px;
+}
+
+/* ---------- HERO ---------- */
+
 .hero {
-    background: linear-gradient(135deg, var(--escuro) 0%, #3e0d0d 60%, var(--vermelho-escuro) 100%);
+    background:
+        radial-gradient(ellipse at 80% 0%, rgba(211, 47, 47, 0.35) 0%, transparent 55%),
+        linear-gradient(135deg, var(--escuro) 0%, #3a0c0c 65%, var(--vermelho-escuro) 100%);
     color: #fff;
     text-align: center;
-    padding: 72px 0 56px;
+    padding: 76px 0 60px;
 }
 
 .selo {
@@ -55,15 +81,15 @@ body {
     font-size: clamp(2.2rem, 7vw, 3.6rem);
     font-weight: 900;
     text-transform: uppercase;
-    line-height: 1.1;
+    line-height: 1.08;
     letter-spacing: -1px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
 }
 
 .hero .subheadline {
-    font-size: clamp(1rem, 2.6vw, 1.25rem);
-    max-width: 560px;
-    margin: 0 auto 32px;
+    font-size: clamp(1rem, 2.6vw, 1.2rem);
+    max-width: 600px;
+    margin: 0 auto 28px;
     opacity: 0.95;
 }
 
@@ -80,33 +106,102 @@ body {
     transition: transform 0.15s, background 0.15s;
 }
 
-.btn-hero:hover {
+.btn-hero:hover,
+.btn-hero:focus-visible {
     background: var(--vermelho-escuro);
     transform: translateY(-2px);
 }
 
-.peticao {
-    padding: 56px 0;
+.hero-micro {
+    margin-top: 14px;
+    font-size: 0.85rem;
+    opacity: 0.85;
 }
+
+/* ---------- SEÇÃO DE DOR ---------- */
+
+.dor {
+    background: var(--escuro);
+    color: #fff;
+    padding: 64px 0;
+}
+
+.dor .kicker {
+    color: var(--amarelo);
+    text-align: center;
+}
+
+.dor .titulo-secao {
+    color: #fff;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 36px;
+}
+
+.dor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.dor-item {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.dor-icone {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    line-height: 1.4;
+}
+
+.dor-item p {
+    font-size: 0.95rem;
+    color: #ddd;
+}
+
+.dor-item strong {
+    color: #fff;
+}
+
+.dor-fecho {
+    text-align: center;
+    font-size: 1.15rem;
+    max-width: 620px;
+    margin: 36px auto 0;
+    color: #fff;
+}
+
+.dor-fecho strong {
+    color: var(--amarelo);
+}
+
+/* ---------- SEÇÃO PETIÇÃO ---------- */
 
 .texto-peticao p {
     font-size: 1.05rem;
     margin-bottom: 20px;
+    color: #444;
 }
 
-.pergunta-chave {
-    font-size: 1.3rem !important;
-    font-weight: 800;
-    color: var(--vermelho-escuro);
-    margin-top: 32px;
-    margin-bottom: 8px !important;
+.texto-peticao strong,
+.motivo strong,
+.chamada-final strong {
+    color: var(--escuro);
 }
 
 .motivos {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin: 24px 0 40px;
+    gap: 14px;
+    margin: 28px 0 40px;
 }
 
 .motivo {
@@ -119,14 +214,22 @@ body {
     padding: 18px 20px;
 }
 
-.motivo-icone {
-    font-size: 1.6rem;
+.motivo-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
     flex-shrink: 0;
+    background: var(--vermelho);
+    color: #fff;
+    font-weight: 800;
+    border-radius: 50%;
     margin-top: 2px;
 }
 
 .motivo h3 {
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--escuro);
     margin-bottom: 4px;
@@ -140,7 +243,18 @@ body {
 .chamada-final p {
     font-size: 1.1rem;
     margin-bottom: 16px;
+    color: #444;
 }
+
+.destaque {
+    background: #fff8e1;
+    border-left: 5px solid var(--amarelo);
+    border-radius: 8px;
+    padding: 18px 20px;
+    font-size: 1.05rem !important;
+}
+
+/* ---------- FORMULÁRIO ---------- */
 
 .secao-form {
     background: linear-gradient(180deg, #fff 0%, var(--cinza) 100%);
@@ -148,13 +262,9 @@ body {
     border-top: 4px solid var(--vermelho);
 }
 
-.secao-form h2 {
+.secao-form .kicker,
+.secao-form .titulo-secao {
     text-align: center;
-    font-size: clamp(1.5rem, 4.5vw, 2rem);
-    font-weight: 900;
-    text-transform: uppercase;
-    color: var(--escuro);
-    margin-bottom: 32px;
 }
 
 .progresso {
@@ -184,7 +294,7 @@ body {
 }
 
 .contador strong {
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     color: var(--vermelho-escuro);
 }
 
@@ -224,6 +334,14 @@ form {
 .campo input:focus {
     outline: none;
     border-color: var(--vermelho);
+}
+
+.campo input:focus-visible,
+button:focus-visible,
+.btn-hero:focus-visible,
+.btn-whatsapp:focus-visible {
+    outline: 3px solid rgba(211, 47, 47, 0.4);
+    outline-offset: 2px;
 }
 
 .input-invalido {
@@ -293,6 +411,13 @@ button[type="submit"]:disabled {
     cursor: not-allowed;
 }
 
+.micro-seguranca {
+    text-align: center;
+    font-size: 0.82rem;
+    color: #777;
+    margin-top: 12px;
+}
+
 .sucesso {
     text-align: center;
     background: #e8f5e9;
@@ -317,7 +442,6 @@ button[type="submit"]:disabled {
 
 .compartilhe {
     margin-top: 16px;
-    font-weight: 600;
 }
 
 .btn-whatsapp {
@@ -336,6 +460,37 @@ button[type="submit"]:disabled {
     background: #1da851;
 }
 
+/* ---------- CTA FIXO MOBILE ---------- */
+
+.cta-fixo {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 50;
+    background: var(--vermelho);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.25s, transform 0.25s;
+}
+
+.cta-fixo.visivel {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* ---------- FOOTER ---------- */
+
 footer {
     background: var(--escuro);
     color: #aaa;
@@ -344,9 +499,17 @@ footer {
     font-size: 0.85rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+    body {
+        padding-bottom: 80px;
+    }
+
     .hero {
         padding: 56px 0 44px;
+    }
+
+    .dor-grid {
+        grid-template-columns: 1fr;
     }
 
     form {
@@ -354,7 +517,19 @@ footer {
     }
 
     .motivo {
-        flex-direction: column;
-        gap: 8px;
+        gap: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .cta-fixo,
+    .barra,
+    .btn-hero,
+    button[type="submit"] {
+        transition: none;
     }
 }

@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const termosInput = document.getElementById('termos');
     const erroGeral = document.getElementById('erro-geral');
     const btnWhatsapp = document.getElementById('btn-whatsapp');
+    const ctaFixo = document.getElementById('cta-fixo');
+    const contadorTexto = document.getElementById('contador-texto');
 
     const urlCompartilhar = encodeURIComponent(window.location.href);
     const msgCompartilhar = encodeURIComponent('Basta de caos nos trilhos! Assine o abaixo-assinado para o governador romper o contrato com a ViaMobilidade: ');
@@ -37,7 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
         carregarAssinaturas();
     } else {
         if (textoAssinaturas) textoAssinaturas.innerText = '0';
+        if (contadorTexto) contadorTexto.innerText = 'assine agora e seja a primeira pessoa';
     }
+
+    window.addEventListener('scroll', () => {
+        const secaoForm = document.getElementById('form-assinatura');
+        if (!ctaFixo || !secaoForm) return;
+        const passouHero = window.scrollY > 600;
+        const formVisivel = secaoForm.getBoundingClientRect().top < window.innerHeight * 0.8;
+        ctaFixo.classList.toggle('visivel', passouHero && !formVisivel);
+    }, { passive: true });
 
     if (btnWhatsapp) {
         btnWhatsapp.href = 'https://wa.me/?text=' + msgCompartilhar + urlCompartilhar;
@@ -123,6 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(() => {
                     form.hidden = true;
                     msgSucesso.hidden = false;
+                    if (ctaFixo) ctaFixo.classList.remove('visivel');
                     carregarAssinaturas();
                 })
                 .catch(() => {
