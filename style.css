@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --vermelho: #d32f2f;
+    --vermelho-escuro: #b71c1c;
+    --amarelo: #ffc107;
+    --escuro: #1a1a1a;
+    --cinza: #f5f5f5;
+    --texto: #333;
+    --sucesso: #2e7d32;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--texto);
+    line-height: 1.6;
+    background: #fff;
+}
+
+.container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--escuro) 0%, #3e0d0d 60%, var(--vermelho-escuro) 100%);
+    color: #fff;
+    text-align: center;
+    padding: 72px 0 56px;
+}
+
+.selo {
+    display: inline-block;
+    background: var(--amarelo);
+    color: var(--escuro);
+    font-weight: 800;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 7vw, 3.6rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+}
+
+.hero .subheadline {
+    font-size: clamp(1rem, 2.6vw, 1.25rem);
+    max-width: 560px;
+    margin: 0 auto 32px;
+    opacity: 0.95;
+}
+
+.btn-hero {
+    display: inline-block;
+    background: var(--vermelho);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 16px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(211, 47, 47, 0.45);
+    transition: transform 0.15s, background 0.15s;
+}
+
+.btn-hero:hover {
+    background: var(--vermelho-escuro);
+    transform: translateY(-2px);
+}
+
+.peticao {
+    padding: 56px 0;
+}
+
+.texto-peticao p {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+}
+
+.pergunta-chave {
+    font-size: 1.3rem !important;
+    font-weight: 800;
+    color: var(--vermelho-escuro);
+    margin-top: 32px;
+    margin-bottom: 8px !important;
+}
+
+.motivos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 24px 0 40px;
+}
+
+.motivo {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: var(--cinza);
+    border-left: 5px solid var(--vermelho);
+    border-radius: 8px;
+    padding: 18px 20px;
+}
+
+.motivo-icone {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.motivo h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--escuro);
+    margin-bottom: 4px;
+}
+
+.motivo p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.chamada-final p {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+}
+
+.secao-form {
+    background: linear-gradient(180deg, #fff 0%, var(--cinza) 100%);
+    padding: 64px 0 72px;
+    border-top: 4px solid var(--vermelho);
+}
+
+.secao-form h2 {
+    text-align: center;
+    font-size: clamp(1.5rem, 4.5vw, 2rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--escuro);
+    margin-bottom: 32px;
+}
+
+.progresso {
+    margin-bottom: 32px;
+}
+
+.barra-fundo {
+    background: #e0e0e0;
+    border-radius: 999px;
+    height: 18px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.barra {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--vermelho), #e57373);
+    border-radius: 999px;
+    transition: width 0.6s ease;
+}
+
+.contador {
+    text-align: center;
+    font-size: 1rem;
+    color: #444;
+}
+
+.contador strong {
+    font-size: 1.3rem;
+    color: var(--vermelho-escuro);
+}
+
+form {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.campo {
+    margin-bottom: 18px;
+}
+
+.campo label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: var(--escuro);
+}
+
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="tel"] {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.15s;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: var(--vermelho);
+}
+
+.input-invalido {
+    border-color: var(--vermelho) !important;
+    background: #fff5f5;
+}
+
+.termos {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.termos input {
+    margin-top: 4px;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.termos span {
+    font-size: 0.88rem;
+    color: #444;
+}
+
+.erro {
+    display: none;
+    color: var(--vermelho);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+.erro.visivel {
+    display: block;
+}
+
+.erro-geral {
+    text-align: center;
+    margin-top: 16px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    background: var(--vermelho);
+    color: #fff;
+    border: none;
+    font-family: inherit;
+    font-size: 1.15rem;
+    font-weight: 700;
+    padding: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.15s;
+    box-shadow: 0 4px 14px rgba(211, 47, 47, 0.35);
+}
+
+button[type="submit"]:hover:not(:disabled) {
+    background: var(--vermelho-escuro);
+    transform: translateY(-2px);
+}
+
+button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.sucesso {
+    text-align: center;
+    background: #e8f5e9;
+    border: 2px solid var(--sucesso);
+    border-radius: 12px;
+    padding: 40px 24px;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+.sucesso-icone {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.sucesso h3 {
+    color: var(--sucesso);
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.compartilhe {
+    margin-top: 16px;
+    font-weight: 600;
+}
+
+.btn-whatsapp {
+    display: inline-block;
+    margin-top: 14px;
+    background: #25d366;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 14px 32px;
+    border-radius: 8px;
+    transition: background 0.15s;
+}
+
+.btn-whatsapp:hover {
+    background: #1da851;
+}
+
+footer {
+    background: var(--escuro);
+    color: #aaa;
+    text-align: center;
+    padding: 28px 0;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 56px 0 44px;
+    }
+
+    form {
+        padding: 22px 16px;
+    }
+
+    .motivo {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
