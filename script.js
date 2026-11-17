@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const scriptURL = 'COLE_AQUI_A_URL_DO_APPS_SCRIPT';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyuQ2u9kVZGECrPTJyfHM2M5ftM5uOwm5fjN-f79Osh9KpbJinICPc4GArim93UJTsb/exec';
 
     const form = document.getElementById('form-assinatura');
     const btnSubmit = document.getElementById('btn-submit');
